@@ -24,6 +24,12 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+        <style>
+            /* Force navbar width and spacing in case of caching or specificity conflicts */
+            .nav-bar .container-lg{max-width:1200px !important;width:100% !important}
+            .navbar-nav .nav-link{white-space:nowrap !important;padding-right:0.6rem !important}
+            @media (max-width:992px){.navbar-nav .nav-link{white-space:normal !important}}
+        </style>
 </head>
 
 <body>
@@ -75,14 +81,15 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Inicio</a>
-                        <a href="prompts.html" class="nav-item nav-link active">Prompts</a>
+                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
+                        <a href="prompts.html" class="nav-item nav-link">Prompts</a>
+                        <!-- deployed-update: 2025-12-17T09:20:00Z -->
                         <a href="Tipos-de-IA.html" class="nav-item nav-link">Tipos de IA</a>
                         <a href="info-ia.html" class="nav-item nav-link">Informacion de la IA</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Mal uso de IA</a>
                             <div class="dropdown-menu border-0 rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                                <a href="plagio.html" class="dropdown-item">Plagio y Fraude</a>
                                 <a href="single.html" class="dropdown-item">Blog Detail</a>
                                 <a href="destination.html" class="dropdown-item">Destination</a>
                                 <a href="guide.html" class="dropdown-item">Travel Guides</a>
