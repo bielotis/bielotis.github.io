@@ -9802,7 +9802,7 @@ h6,
 
 .navbar-brand {
   padding-left: 0 !important;
-  margin-right: 0; /* reduce gap between brand and nav items */
+  margin-right: 0.25rem; /* restore small gap between brand and nav items */
 }
 
 /* Remove left padding on nav container/collapse so brand and nav sit closer */
@@ -9815,12 +9815,12 @@ h6,
 
 .navbar-nav .nav-link {
   white-space: nowrap; /* avoid wrapping text in menu items */
-  padding-right: 0.4rem;
+  padding-right: 0.9rem;
 }
 
 /* Override Bootstrap's `ml-auto` to keep nav items closer to the brand when desired */
 .navbar-nav.ml-auto {
-  margin-left: 0 !important;
+  margin-left: auto !important;
 }
 
 @media (max-width: 992px) {
