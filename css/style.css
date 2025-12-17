@@ -9793,3 +9793,30 @@ h6,
   list-style-type: none;
 }
 
+
+/* NAVBAR: make navbar wider so long menu text fits better */
+.nav-bar .container-lg {
+  max-width: 1400px; /* expand beyond Bootstrap's default for large screens */
+  width: 100%;
+}
+
+.navbar-brand {
+  padding-left: 1rem;
+}
+
+.navbar-nav .nav-link {
+  white-space: nowrap; /* avoid wrapping text in menu items */
+  padding-right: 0.9rem;
+}
+
+@media (max-width: 992px) {
+  .nav-bar .container-lg {
+    max-width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .navbar-nav .nav-link {
+    white-space: normal; /* allow wrapping on small screens */
+  }
+}
+
