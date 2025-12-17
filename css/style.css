@@ -9802,7 +9802,15 @@ h6,
 
 .navbar-brand {
   padding-left: 0 !important;
-  margin-right: 0.5rem; /* reduce gap between brand and nav items */
+  margin-right: 0.25rem; /* reduce gap between brand and nav items */
+}
+
+/* Remove left padding on nav container/collapse so brand and nav sit closer */
+.nav-bar .container-lg nav {
+  padding-left: 0 !important;
+}
+.collapse.navbar-collapse {
+  padding-left: 0 !important;
 }
 
 .navbar-nav .nav-link {
