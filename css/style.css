@@ -9811,6 +9811,7 @@ h6,
 }
 .collapse.navbar-collapse {
   padding-left: 0 !important;
+  justify-content: flex-start !important; /* keep nav items next to brand on the left */
 }
 
 .navbar-nav .nav-link {
@@ -9820,7 +9821,7 @@ h6,
 
 /* Override Bootstrap's `ml-auto` to keep nav items closer to the brand when desired */
 .navbar-nav.ml-auto {
-  margin-left: auto !important;
+  margin-left: 0 !important; /* force nav to sit to the left of the container */
 }
 
 @media (max-width: 992px) {
