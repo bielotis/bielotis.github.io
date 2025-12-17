@@ -9796,7 +9796,7 @@ h6,
 
 /* NAVBAR: make navbar wider so long menu text fits better */
 .nav-bar .container-lg {
-  max-width: 1400px; /* expand beyond Bootstrap's default for large screens */
+  max-width: 1600px; /* expand further so long menu text fits on wide screens */
   width: 100%;
 }
 
