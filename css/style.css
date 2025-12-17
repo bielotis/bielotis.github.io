@@ -9801,7 +9801,8 @@ h6,
 }
 
 .navbar-brand {
-  padding-left: 1rem;
+  padding-left: 0 !important;
+  margin-right: 0.5rem; /* reduce gap between brand and nav items */
 }
 
 .navbar-nav .nav-link {
