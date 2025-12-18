@@ -9802,6 +9802,7 @@ h6,
 
 .navbar-brand {
   padding-left: 0 !important;
+  margin-left: 1.25rem; /* small left spacing from edge */
   margin-right: 0.25rem; /* restore small gap between brand and nav items */
 }
 
