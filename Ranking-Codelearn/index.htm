@@ -13,26 +13,13 @@
 </header>
 
 <main class="container">
-<section class="ranking-card">
-  <h2 class="section-title">Ranking general</h2>
 
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Juego</th>
-        <th>Puntuación</th>
-        <th>Estrellas</th>
-        <th>Me gusta</th>
-        <th>Descripción</th>
-        <th>Scratch</th>
-      </tr>
-    </thead>
-    <tbody id="ranking-body"></tbody>
-  </table>
+  <div id="top-container" class="top-container">
+    <!-- Aquí se insertan los tops -->
+  </div>
 
   <div class="pagination" id="pagination"></div>
-</section>
+
 </main>
 
 <script>
@@ -105,6 +92,27 @@
     const inicio = (num - 1) * porPagina;
     const fin = inicio + porPagina;
     const lista = juegos.slice(inicio, fin);
+
+    const cont = document.getElementById("top-container");
+    cont.innerHTML = `
+      <div class="top-card">
+        <h2 class="top-title">Top ${num}</h2>
+        <table class="ranking-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Juego</th>
+              <th>Puntuación</th>
+              <th>Estrellas</th>
+              <th>Me gusta</th>
+              <th>Descripción</th>
+              <th>Scratch</th>
+            </tr>
+          </thead>
+          <tbody id="ranking-body"></tbody>
+        </table>
+      </div>
+    `;
 
     const tbody = document.getElementById("ranking-body");
     tbody.innerHTML = "";
