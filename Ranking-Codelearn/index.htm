@@ -7,70 +7,135 @@
 </head>
 <body>
 
-  <header class="header">
-    <h1 class="title">Ranking de juegos de Scratch</h1>
-    <p class="subtitle">Los mejores proyectos creados por estudiantes</p>
-  </header>
+<header class="header">
+  <h1 class="title">Ranking de juegos de Scratch</h1>
+  <p class="subtitle">Clasificación basada en puntuación (0–10). Cada punto equivale a media estrella.</p>
+</header>
 
-  <main class="container">
+<main class="container">
+<section class="ranking-card">
+  <h2 class="section-title">Ranking general</h2>
 
-    <section class="ranking-card">
-      <h2 class="section-title">Top juegos de la semana</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Juego</th>
+        <th>Puntuación</th>
+        <th>Estrellas</th>
+        <th>Me gusta</th>
+        <th>Descripción</th>
+        <th>Scratch</th>
+      </tr>
+    </thead>
+    <tbody id="ranking-body"></tbody>
+  </table>
 
-      <table class="ranking-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Juego</th>
-            <th>Autor</th>
-            <th>Categoría</th>
-            <th>Puntuación</th>
-            <th>Scratch</th>
-          </tr>
-        </thead>
+  <div class="pagination" id="pagination"></div>
+</section>
+</main>
 
-        <tbody>
-          <tr>
-            <td class="rank">1</td>
-            <td>
-              <span class="game-name">Galaxy Runner</span>
-              <span class="game-meta">1.2k visitas</span>
-            </td>
-            <td>que_dev</td>
-            <td><span class="tag">Plataformas</span></td>
-            <td class="score">9.6 ★★★★★</td>
-            <td><a href="#" class="link" target="_blank">Ver</a></td>
-          </tr>
+<script>
+  const juegos = [
+    {nombre:"Echoes of the Void (muehheh)", mg:31, p:10, desc:"Simplemente increible, no parece hecho con scratch", link:"https://fun.codelearn.cat/scrp/wMw9DoojeQMawwoMjjDo"},
+    {nombre:"Qustionari de europa", mg:11, p:10, desc:"Un cuestionario entretenido y con preguntas no muy dificiles", link:"https://fun.codelearn.cat/scrp/wMewTTMwDDoaMewwwTw9"},
+    {nombre:"D_NOT_NOT", mg:7, p:7, desc:"Has de reaccionar rapido y moverte al lado que te indican", link:"https://fun.codelearn.cat/scrp/wQDwjQeTQwTaMoD99SeM"},
+    {nombre:"Skeleton Killer", mg:16, p:7, desc:"Es facil y cumple lo que dice, matar esqueletos", link:"https://fun.codelearn.cat/scrp/wMMjMDQDwQTaM9SwwMoQ"},
+    {nombre:"Ranawey the Wizard Toad", mg:6, p:7, desc:"Es simple pero entretenido", link:"https://fun.codelearn.cat/scrp/wM9Q9eMoS9eaMoD99SeM"},
+    {nombre:"CODERTALE🙂", mg:26, p:7, desc:"El juego esta bien pero tiene un bug importante", link:"https://fun.codelearn.cat/scrp/wMoT9oQjjMoaMoDTweS9"},
+    {nombre:"APPLE CAT SPACE MISSION", mg:23, p:7, desc:"Movimiento fluido y colisiones correctas", link:"https://fun.codelearn.cat/scrp/wTewooeoM99aMwewe9Qj"},
+    {nombre:"peta globus", mg:4, p:7, desc:"Reflejos para darle a los globos", link:"https://fun.codelearn.cat/scrp/wTwSTwSoSQ9aMDjwojjw"},
+    {nombre:"[POP - UPS!!] - Nora Ramos ;)", mg:13, p:7, desc:"Click a ventanas emergentes", link:"https://fun.codelearn.cat/scrp/wTSjjSDSTeTawwoMjjDo"},
+    {nombre:"Que no t'atrapin!!", mg:9, p:6, desc:"Escapar del gato", link:"https://fun.codelearn.cat/scrp/wQTSSMToQTTaDoj9Q9DM"},
+    {nombre:"Pong 2Player (Exclusive)", mg:9, p:6, desc:"Movimiento malo pero funcional", link:"https://fun.codelearn.cat/scrp/wDSSjTSe9SDaTwo9Mwew"},
+    {nombre:"El Pilot Codelearner Perdut", mg:27, p:6, desc:"Movimiento malo y bug de vida", link:"https://fun.codelearn.cat/scrp/wToe9QDTjo9aMSoQeejw"},
+    {nombre:"Central elèctrica clicker", mg:18, p:6, desc:"Clicker con logros", link:"https://fun.codelearn.cat/scrp/wwwSTwQjMSeaMDowoj99"},
+    {nombre:"Cookie click /2", mg:5, p:5, desc:"Tipico clicker", link:"https://fun.codelearn.cat/scrp/wQoQwjSSejMawjD9eM9Q"},
+    {nombre:"Ajuda Agustí a sobreviure a l'espai", mg:12, p:5, desc:"Muy basico pero cumple", link:"https://fun.codelearn.cat/scrp/wMwjQeDQ9eTaMTTQMoQ9"},
+    {nombre:"Cookie Clicker", mg:23, p:5, desc:"Otro cookie clicker", link:"https://fun.codelearn.cat/scrp/wMSQMe9eoSMaTwo9Mwew"},
+    {nombre:"KITTEN ASMR XDDD", mg:18, p:5, desc:"Pasar la pata por encima de gatos", link:"https://fun.codelearn.cat/scrp/wTwQMD9Sj9waMwewe9Qj"},
+    {nombre:"Només cal que feu clic a la poma (anglès)", mg:32, p:5, desc:"Cookie clicker con manzana", link:"https://fun.codelearn.cat/scrp/wT9So9wwS9TaQ9TM9ST"},
+    {nombre:"ATAC ZOMBIE", mg:11, p:5, desc:"Matar oleadas de zombies", link:"https://fun.codelearn.cat/scrp/wwDjSDjQToeaMSSQjoeo"},
+    {nombre:"la princesa i la bruixa dolenta", mg:4, p:5, desc:"Historia larga", link:"https://fun.codelearn.cat/scrp/wTDooQeT9eSaTTTDT9oT"},
+    {nombre:"Forsaken Roblox", mg:1, p:4, desc:"Muy basico y dificil de entender", link:"https://fun.codelearn.cat/scrp/wQQ9eeDMDjQaMwS9DTwe"},
+    {nombre:"esquiva les ''punxes''.", mg:12, p:4, desc:"No pasa nada si te tocan", link:"https://fun.codelearn.cat/scrp/wT9QSM9oMSQawjoQQDD9"},
+    {nombre:"futbol i basket", mg:6, p:4, desc:"Movimiento raro", link:"https://fun.codelearn.cat/scrp/woMMDewoSQQaDwQeTSoD"},
+    {nombre:"versus", mg:6, p:4, desc:"Mecanica de pegar funciona", link:"https://fun.codelearn.cat/scrp/wMMoeoMTMMjaMewMjTjo"},
+    {nombre:"Sprunki", mg:12, p:4, desc:"Cambiar skin arrastrando", link:"https://fun.codelearn.cat/scrp/wToQeQw9DweawSo9jQeT"},
+    {nombre:"derrota al robot", mg:8, p:4, desc:"Movimiento malo y niveles imposibles", link:"https://fun.codelearn.cat/scrp/wDooeM99w9DawSo9DMQj"},
+    {nombre:"HALLOWEEN BAKET (NO ACABAT)", mg:7, p:3, desc:"Click y entra", link:"https://fun.codelearn.cat/scrp/wMwMQ9jDD9TaMeDeSoTM"},
+    {nombre:"El SuperMaramew", mg:12, p:3, desc:"Bug con la rueda del ratón", link:"https://fun.codelearn.cat/scrp/wMTMTeoweQwaMTTQMoQ9"},
+    {nombre:"FRUIT GACHA V1", mg:21, p:3, desc:"Muy lento y sin propósito", link:"https://fun.codelearn.cat/scrp/wTwoeMjSwSjaMeDeSoTM"},
+    {nombre:"HISTÒRIA SENSE SENTIT", mg:13, p:3, desc:"Historia sin sentido", link:"https://fun.codelearn.cat/scrp/wTTe9SeMjSoaMwewe9Qj"},
+    {nombre:"Porters", mg:5, p:3, desc:"A veces marca gol fuera", link:"https://fun.codelearn.cat/scrp/wwjejjTeDeQaMSjejT9w"},
+    {nombre:"Ratolí mutant", mg:3, p:2, desc:"Solo moverse", link:"https://fun.codelearn.cat/scrp/wMMoejDTDjoaMewTeoDj"},
+    {nombre:"pato killer simulator :)", mg:10, p:2, desc:"Matar patos", link:"https://fun.codelearn.cat/scrp/wwejeS9jQjDaMSSQSMQ9"},
+    {nombre:"BallsFootball", mg:4, p:2, desc:"Imposible jugar a 2", link:"https://fun.codelearn.cat/scrp/wwS9QjjTDo9aMwTwoDDQ"},
+    {nombre:"Pokémon Battles: edició Lucario Shiny vs Mew", mg:4, p:2, desc:"Ataques funcionan pero no fluido", link:"https://fun.codelearn.cat/scrp/wwwTwweMwoSawSMeowjw"},
+    {nombre:"BRAND TO THE NEW WORLD", mg:0, p:1, desc:"El rival no se mueve", link:"https://fun.codelearn.cat/scrp/wooSTTSo9eDaM9DewM9S"},
+    {nombre:"Guanyador del concurs de Nadal", mg:7, p:1, desc:"Solo conversación", link:"https://fun.codelearn.cat/scrp/wooDSTeSSeDaTwo9Mwew"},
+    {nombre:"beiblade battle", mg:9, p:1, desc:"No funciona", link:"https://fun.codelearn.cat/scrp/wTeMjQSTTQjaMDQToewS"},
+    {nombre:"EL CASTELL ENCANTAT", mg:3, p:1, desc:"Cuento muy corto", link:"https://fun.codelearn.cat/scrp/wMM9wT9joTQaojeTj9ew"},
+    {nombre:"Minecraft Pre-Classic", mg:14, p:1, desc:"Igual que Minecraft Classic", link:"https://fun.codelearn.cat/scrp/wTeMMMeeQoeaTwo9Mwew"},
+    {nombre:"Atrapa al gat", mg:4, p:1, desc:"Darle a un gato que se mueve", link:"https://fun.codelearn.cat/scrp/wTjeMQQMQDTaMooMQDQe"},
+    {nombre:"Fins sempre Codelearn", mg:7, p:1, desc:"Son 3 fotos", link:"https://fun.codelearn.cat/scrp/wweTM9jej9oaT9jTTTMw"},
+    {nombre:"ESQUIVA ELS METEORITS", mg:5, p:1, desc:"Meteoritos estáticos", link:"https://fun.codelearn.cat/scrp/DooDSMjMoDMawjoQQDD9"},
+    {nombre:"Atrapa peixos", mg:1, p:1, desc:"Ganas sin hacer nada", link:"https://fun.codelearn.cat/scrp/wwToMDQeSwDawjSDTToD"},
+    {nombre:"Roba un Brainrot v1.0", mg:0, p:0, desc:"Solo un botón y 2 variables", link:"https://fun.codelearn.cat/scrp/wD9e9TooDDTaTwo9Mwew"},
+    {nombre:"Minecraft Classic", mg:1, p:0, desc:"Es solo una imagen", link:"https://fun.codelearn.cat/scrp/www9wMSoQDeaTwo9Mwew"},
+    {nombre:"defensor del castell", mg:10, p:0, desc:"Solo 2 murciélagos", link:"https://fun.codelearn.cat/scrp/wMweww9wSeeaoSQjSewM"},
+    {nombre:"Agustí a l'espai", mg:7, p:0, desc:"Copia del otro Agustí", link:"https://fun.codelearn.cat/scrp/wMwjoToTjMjaMTTQMoQ9"}
+  ];
 
-          <tr>
-            <td class="rank">2</td>
-            <td>
-              <span class="game-name">Labyrinth Quest</span>
-              <span class="game-meta">980 visitas</span>
-            </td>
-            <td>coder_kid</td>
-            <td><span class="tag">Puzles</span></td>
-            <td class="score">9.2 ★★★★☆</td>
-            <td><a href="#" class="link" target="_blank">Ver</a></td>
-          </tr>
+  juegos.sort((a,b)=>b.p-a.p);
 
-          <tr>
-            <td class="rank">3</td>
-            <td>
-              <span class="game-name">Space Invaders Remix</span>
-              <span class="game-meta">750 visitas</span>
-            </td>
-            <td>scratch_master</td>
-            <td><span class="tag">Arcade</span></td>
-            <td class="score">8.9 ★★★★☆</td>
-            <td><a href="#" class="link" target="_blank">Ver</a></td>
-          </tr>
+  const porPagina = 10;
+  let paginaActual = 1;
 
-        </tbody>
-      </table>
-    </section>
+  function estrellas(n) {
+    let s = "";
+    let medias = n;
+    for (let i = 0; i < Math.floor(medias/2); i++) s += "★";
+    if (medias % 2 === 1) s += "½";
+    return s || "—";
+  }
 
-  </main>
+  function mostrarPagina(num) {
+    paginaActual = num;
+    const inicio = (num - 1) * porPagina;
+    const fin = inicio + porPagina;
+    const lista = juegos.slice(inicio, fin);
+
+    const tbody = document.getElementById("ranking-body");
+    tbody.innerHTML = "";
+
+    lista.forEach((j, i) => {
+      tbody.innerHTML += `
+        <tr>
+          <td>${inicio + i + 1}</td>
+          <td>${j.nombre}</td>
+          <td>${j.p}</td>
+          <td class="stars">${estrellas(j.p)}</td>
+          <td>${j.mg}</td>
+          <td>${j.desc}</td>
+          <td><a href="${j.link}" target="_blank">Ver</a></td>
+        </tr>
+      `;
+    });
+
+    const totalPaginas = Math.ceil(juegos.length / porPagina);
+    const pagDiv = document.getElementById("pagination");
+    pagDiv.innerHTML = "";
+
+    for (let i = 1; i <= totalPaginas; i++) {
+      pagDiv.innerHTML += `
+        <button class="page-btn ${i === paginaActual ? "active" : ""}" onclick="mostrarPagina(${i})">${i}</button>
+      `;
+    }
+  }
+
+  mostrarPagina(1);
+</script>
 
 </body>
 </html>
