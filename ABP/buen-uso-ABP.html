@@ -68,11 +68,12 @@
     <!-- Topbar End -->
 
 
+
     <!-- Navbar Start -->
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
-                <a href="index.html" class="navbar-brand">
+                <a href="index-ABP.html" class="navbar-brand">
                     <h1 class="m-0 text-primary"><span class="text-dark">INTELIGENCIA</span><br>ARTIFICIAL</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -80,16 +81,16 @@
                 </button>
                 <div class="collapse navbar-collapse px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Inicio</a>
-                        <a href="prompts.html" class="nav-item nav-link active">Prompts</a>
+                        <a href="index-ABP.html" class="nav-item nav-link">Inicio</a>
+                        <a href="prompts-ABP.html" class="nav-item nav-link">Prompts</a>
                         <!-- deployed-update: 2025-12-17T09:20:00Z -->
-                        <a href="Tipos-de-IA.html" class="nav-item nav-link">Tipos de IA</a>
-                        <a href="info-ia.html" class="nav-item nav-link">Informacion de la IA</a>
+                        <a href="Tipos-de-IA-ABP.html" class="nav-item nav-link">Tipos de IA</a>
+                        <a href="info-ia-ABP.html" class="nav-item nav-link">Informacion de la IA</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Uso de la IA</a>
                             <div class="dropdown-menu border-0 rounded-0 m-0">
-                                <a href="buen-uso.html" class="dropdown-item">Buen uso</a>
-                                <a href="mal-uso.html" class="dropdown-item ">Mal uso</a>
+                                <a href="buen-uso-ABP.html" class="dropdown-item active">Buen uso</a>
+                                <a href="mal-uso-ABP.html" class="dropdown-item ">Mal uso</a>
                             </div>
                         </div>
                     </div>
@@ -104,145 +105,18 @@
     <div class="container-fluid page-header">
         <div class="container">
             <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-                <h3 class="display-4 text-white text-uppercase">Prompts</h3>
+                <h3 class="display-4 text-white text-uppercase">El plagio y el fraude de la IA generativa</h3>
                 <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="">Inicio</a></p>
+                    <p class="m-0 text-uppercase"><a class="text-white" href="index-ABP.html">Inicio</a></p>
                     <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Prompts</p>
+                    <p class="m-0 text-uppercase">Informacion</p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Header End -->
-    <style>
-        .prompt-library {
-          padding: 50px 20px;
-          max-width: 1100px;
-          margin: 0 auto;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          color: #333;
-        }
-      
-        .title {
-          text-align: center;
-          margin-bottom: 30px;
-          font-size: 2rem;
-          color: #1a1a1a;
-        }
-      
-        .prompt-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 25px;
-        }
-      
-        .prompt-card {
-          
-          
-          border-radius: 15px;
-          padding: 25px;
-          
-          display: flex;
-          flex-direction: column;
-          
-        }
-      
-        
-        .badge {
-          font-size: 0.75rem;
-          font-weight: bold;
-          padding: 5px 12px;
-          border-radius: 20px;
-          width: fit-content;
-          text-transform: uppercase;
-          margin-bottom: 15px;
-        }
-      
-        
-      
-        .prompt-text {
-          font-size: 0.95rem;
-          line-height: 1.6;
-          
-          
-          padding: 15px;
-          border-radius: 8px;
-          margin: 15px 0;
-          flex-grow: 1;
-          
-        }
-      
-        .copy-btn {
-          background: #1a1a1a;
-          color: white;
-          border: none;
-          padding: 12px;
-          
-          cursor: pointer;
-          font-weight: 600;
-          transition: background 0.2s;
-        }
-      
-        .copy-btn:hover {
-          background: #444;
-        }
-      </style>
-      
 
-
-
-    <section class="prompt-library">
-        <h2 class="title">Biblioteca de Prompts Maestros</h2>
-        <div class="prompt-grid">
-          
-          <!-- Tarjeta 1 -->
-          <div class="prompt-card">
-            <span class="badge blue">Productividad</span>
-            <h3>Analista de Datos Senior</h3>
-            <p class="prompt-text" id="p1">Actúa como un experto en análisis de datos. Analiza el siguiente texto y genera: 1) Hallazgos principales, 2) Tendencias y 3) Recomendaciones en una tabla.</p>
-            <button class="copy-btn" onclick="copyPrompt('p1', this)">Copiar Prompt</button>
-          </div>
-      
-          <!-- Tarjeta 2 -->
-          <div class="prompt-card">
-            <span class="badge green">Educación</span>
-            <h3>Método Feynman</h3>
-            <p class="prompt-text" id="p2">Explícame el concepto de [TEMA] como si tuviera 10 años. Usa una analogía sencilla y evita tecnicismos para que sea fácil de entender.</p>
-            <button class="copy-btn" onclick="copyPrompt('p2', this)">Copiar Prompt</button>
-          </div>
-      
-          <!-- Tarjeta 3 -->
-          <div class="prompt-card">
-            <span class="badge purple">Escritura</span>
-            <h3>Redactor Creativo</h3>
-            <p class="prompt-text" id="p3">Escribe un post para LinkedIn sobre [TEMA]. Usa un tono profesional pero inspirador, incluye 3 hashtags y un llamado a la acción claro.</p>
-            <button class="copy-btn" onclick="copyPrompt('p3', this)">Copiar Prompt</button>
-          </div>
-      
-        </div>
-      </section>
-      
-
-      <script>
-        function copyPrompt(id, button) {
-          const text = document.getElementById(id).innerText;
-          
-          navigator.clipboard.writeText(text).then(() => {
-            const originalText = button.innerText;
-            button.innerText = "¡Copiado!";
-            button.style.backgroundColor = "#28a745"; // Cambia a verde al copiar
-            
-            setTimeout(() => {
-              button.innerText = originalText;
-              button.style.backgroundColor = "#1a1a1a"; // Vuelve al color original
-            }, 2000);
-          });
-        }
-      </script>
-      
-
-
-
+    ...
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
@@ -260,38 +134,9 @@
                     <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Contact Us</h5>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope mr-2"></i>postico.13863@palcam.cat</p>
-                <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Newsletter</h6>
-                <div class="w-100">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary px-3">Sign Up</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-        <div class="row">
-            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white-50">Copyright &copy; <a href="#">Domain</a>. All Rights Reserved.</a>
-                </p>
-            </div>
-            <div class="col-lg-6 text-center text-md-right">
-                <p class="m-0 text-white-50">Designed by <a href="https://htmlcodex.com">HTML Codex</a>
-                </p>
-            </div>
         </div>
     </div>
     <!-- Footer End -->
-
-
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
