@@ -1,0 +1,111 @@
+/* Estilo inspirado en Codelearn (no oficial) */
+
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.ranking-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.section-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ranking-table th {
+  text-align: left;
+  padding: 0.6rem;
+  background: #f9fafb;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.ranking-table td {
+  padding: 0.7rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ranking-table tr:hover {
+  background: #eef2ff;
+}
+
+.rank {
+  font-weight: 700;
+}
+
+.game-name {
+  font-weight: 600;
+  display: block;
+}
+
+.game-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.tag {
+  background: #eff6ff;
+  color: var(--primary-dark);
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.score {
+  font-weight: 600;
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
